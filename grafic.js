@@ -21,7 +21,7 @@ function sketchProc(p) {
 		p.size(800, 600);
 		p.background(255); // white canvas	
 		p.noStroke();
-		//p.frameRate(40);
+		//p.frameRate(60);
 		nX = 0;
 		nY = 0;
     }

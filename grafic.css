@@ -9,13 +9,27 @@ body {
 
 #sidebar {
 	margin: 0px 0px 0px 0px;
-	width: 300px;
+	padding: 0px 10px 0px 10px;
+	width: 250px;
 	float:left;
-	border-right: 10px solid #eee;
+	//border: 10px solid #eee;
 }
 
 #colorbar {
-	margin: 0px 0px 0px 10px;
+	float:left;
+	margin: 0px 0px 0px 0px;
+}
+
+.input {
+	float: left;
+}
+
+.show {
+	float: left;
+	height: 25px;
+	width: 25px;
+	background: #000;
+	margin: 0px 0px 0px 8px;
 }
 
 #mainboard {
@@ -24,11 +38,13 @@ body {
 }
 
 #colorpicker {
-	margin: 10px 10px 10px 40px;
+	margin: 0px 10px 10px 0px;
+	float: left;
 	
 }
 
 .separator {
+	clear: both;
 	height: 5px;
 	border-bottom: 5px dotted #fff;
 	margin-bottom: 20px;

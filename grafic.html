@@ -8,9 +8,10 @@
 	<link rel="stylesheet" href="farbtastic.css" type="text/css" />
 	<link rel="stylesheet" href="grafic.css" type="text/css" />
 	<script type="text/javascript">
-	  $(document).ready(function() {
-      $('#colorpicker').farbtastic('#color');
-	  });
+$(document).ready(function() {
+	$('#colorpicker').farbtastic(setStrokeColor);
+	//$('#colorpicker').farbtastic('#color');
+});
 	</script>
   </head>
   <body>
@@ -20,12 +21,15 @@
 	<div id="sidebar">
 	  <h1>Grafic</h1>
 	  <div class="separator"></div>
-	  <form id="colorbar">
-		<input type="text" id="color" name="color" value="#000000" />
-		<button type="button" onclick="setStrokeColor()">change</button>
+	  <h2>Color</h2>
+	  <div id="colorpicker"></div>
+	  <form id="colorbar" onkeypress="if(event.keyCode==13) {return false;}">
+		<input type="text" class="input" name="color" value="#000000"
+		size="10" onkeydown="if(event.keyCode==13){setStrokeColor(this.value);return false;}" />
+		<div class="show"></div>
 	  </form>
 	  
-	  <div id="colorpicker"></div>
+	  
 	  <div class="separator"></div>
 	</div>
 	
