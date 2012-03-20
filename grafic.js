@@ -1,41 +1,38 @@
+/*
+version: 1.0.0
+author: onesuper
+email: onesuperclark@gmail.com
+
+ */
+
 
 function sketchProc(processing) {
-/*
-  processing.draw = function() {
 
-    var centerX = processing.width / 2, centerY = processing.height / 2;
-    var maxArmLength = Math.min(centerX, centerY);
+    var radius = 10.0;
+    var nX, nY;
 
-    function drawArm(position, lengthScale, weight) {      
-      processing.strokeWeight(weight);
-      processing.line(centerX, centerY, 
-        centerX + Math.sin(position * 2 * Math.PI) * lengthScale * maxArmLength,
-        centerY - Math.cos(position * 2 * Math.PI) * lengthScale * maxArmLength);
+
+    processing.setup = function() {
+	processing.size(800, 600);
+	processing.background(225);	
+	processing.strokeWeight(1);
+	nX = 0;
+	nY = 0;
     }
 
-    
-    processing.background(224);
-
-    var now = new Date();
-
-    
-    var hoursPosition = (now.getHours() % 12 + now.getMinutes() / 60) / 12;
-    drawArm(hoursPosition, 0.5, 5);
-
-    
-    var minutesPosition = (now.getMinutes() + now.getSeconds() / 60) / 60;
-    drawArm(minutesPosition, 0.80, 3);
-
-    
-    var secondsPosition = now.getSeconds() / 60;
-    drawArm(secondsPosition, 0.90, 1);
-  };
-*/
-
-	processing.setup() {
-		processing.background(225);
+    processing.draw = function() {
+	processing.fill(0, 121, 184);
+	if (processing.mousePressed) {
+	    processing.ellipse(nX, nY, radius, radius);
 	}
-  
+    }
+
+
+    processing.mouseMoved = function() {
+	nX = processing.mouseX;
+	nY = processing.mouseY;
+    }
+
 }
 
 var canvas = document.getElementById("canvas1");
