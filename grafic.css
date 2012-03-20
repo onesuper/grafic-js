@@ -1,0 +1,35 @@
+body {
+	color: #eee;
+	font: 15px;
+	background: #333;
+
+}
+
+
+
+#sidebar {
+	margin: 0px 0px 0px 0px;
+	width: 300px;
+	float:left;
+	border-right: 10px solid #eee;
+}
+
+#colorbar {
+	margin: 0px 0px 0px 10px;
+}
+
+#mainboard {
+	margin: 0px 0px 0px 30px;
+	float: left;
+}
+
+#colorpicker {
+	margin: 10px 10px 10px 40px;
+	
+}
+
+.separator {
+	height: 5px;
+	border-bottom: 5px dotted #fff;
+	margin-bottom: 20px;
+}

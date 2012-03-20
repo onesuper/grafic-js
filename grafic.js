@@ -11,24 +11,26 @@ function sketchProc(p) {
 	var nX, nY;
 	var mouseDown = false;
     
-	p.radius = 10.0;
-	p.strokeColor = p.color(1, 12, 123);
+	//global attributes 
+	p.strokeSize = 10.0;
+	p.strokeColor = p.color(0);	// default black
 	p.strokeOpacity = 255;
 	
 	
     p.setup = function() {
 		p.size(800, 600);
-		p.background(225);	
+		p.background(255); // white canvas	
 		p.noStroke();
 		//p.frameRate(40);
 		nX = 0;
 		nY = 0;
     }
 
+
     p.draw = function() {
 		if (mouseDown ) {
 			p.fill(p.strokeColor, p.strokeOpacity);
-			p.ellipse(nX, nY, p.radius, p.radius);
+			p.ellipse(nX, nY, p.strokeSize, p.strokeSize);
 		}
     }
 

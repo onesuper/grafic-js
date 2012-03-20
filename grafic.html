@@ -6,21 +6,32 @@
 	<script type="text/javascript" src="farbtastic.js"></script>
 	<script type="text/javascript" src="setAttributes.js"></script>
 	<link rel="stylesheet" href="farbtastic.css" type="text/css" />
+	<link rel="stylesheet" href="grafic.css" type="text/css" />
 	<script type="text/javascript">
-$(document).ready(function() {
-    $('#colorpicker').farbtastic('#color');
-});
+	  $(document).ready(function() {
+      $('#colorpicker').farbtastic('#color');
+	  });
 	</script>
   </head>
   <body>
 
 
-	<h1>Grafic</h1>
-
-	<form>Color:<input type="text" id="color" name="color" value="#000000" /></form>
-	<div id="colorpicker"></div>
-	<button type="button" onclick="setStrokeColor()">setStrokeColor</button>
-	<p><canvas id="canvas1"></canvas></p>
+	
+	<div id="sidebar">
+	  <h1>Grafic</h1>
+	  <div class="separator"></div>
+	  <form id="colorbar">
+		<input type="text" id="color" name="color" value="#000000" />
+		<button type="button" onclick="setStrokeColor()">change</button>
+	  </form>
+	  
+	  <div id="colorpicker"></div>
+	  <div class="separator"></div>
+	</div>
+	
+	<div id="mainboard">
+	  <p><canvas id="canvas1"></canvas></p>
+	</div>
 	
 
 	<script type="text/javascript" src="grafic.js"></script>
