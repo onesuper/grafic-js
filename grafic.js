@@ -6,52 +6,53 @@
 */
 
 
-function sketchProc(processing) {
+function sketchProc(p) {
 
-    var radius = 10.0;
-    var nX, nY;
+	var nX, nY;
+	var mouseDown = false;
+    
+	p.radius = 10.0;
+	p.strokeColor = p.color(1, 12, 123);
+	p.strokeOpacity = 255;
 	
 	
-
-
-    processing.setup = function() {
-		processing.size(800, 600);
-		processing.background(225);	
-		processing.strokeWeight(1);
-		processing.stroke(0);
-		//processing.frameRate(40);
+    p.setup = function() {
+		p.size(800, 600);
+		p.background(225);	
+		p.noStroke();
+		//p.frameRate(40);
 		nX = 0;
 		nY = 0;
-		
-		
     }
 
-    processing.draw = function() {
-		
-		
-		processing.fill(0, 100, 120);
-		processing.ellipse(nX, nY, radius, radius);
-		
+    p.draw = function() {
+		if (mouseDown ) {
+			p.fill(p.strokeColor, p.strokeOpacity);
+			p.ellipse(nX, nY, p.radius, p.radius);
+		}
     }
 
 
-    processing.mouseMoved = function() {
+    p.mouseMoved = function() {
 		
     }
 
-	processing.mouseDragged = function() {
-		
-		nX = processing.mouseX;
-		nY = processing.mouseY;
-		
+	p.mouseDragged = function() {
+		nX = p.mouseX;
+		nY = p.mouseY;	
 	}
 	
-	processing.mousePressed = function() {
+	p.mouseClicked = function() {
 		
-	
 	}
-	processing.mouseReleased = function() {
-		
+
+	p.mousePressed = function() {
+		mouseDown = true;
+		nX = p.mouseX;
+		nY = p.mouseY;
+	}
+	p.mouseReleased = function() {
+		mouseDown = false;
 	}
 
 }
