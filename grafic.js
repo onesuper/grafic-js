@@ -1,37 +1,58 @@
 /*
-version: 1.0.0
-author: onesuper
-email: onesuperclark@gmail.com
+  version: 1.0.0
+  author: onesuper
+  email: onesuperclark@gmail.com
 
- */
+*/
 
 
 function sketchProc(processing) {
 
     var radius = 10.0;
     var nX, nY;
+	
+	
 
 
     processing.setup = function() {
-	processing.size(800, 600);
-	processing.background(225);	
-	processing.strokeWeight(1);
-	nX = 0;
-	nY = 0;
+		processing.size(800, 600);
+		processing.background(225);	
+		processing.strokeWeight(1);
+		processing.stroke(0);
+		//processing.frameRate(40);
+		nX = 0;
+		nY = 0;
+		
+		
     }
 
     processing.draw = function() {
-	processing.fill(0, 121, 184);
-	if (processing.mousePressed) {
-	    processing.ellipse(nX, nY, radius, radius);
-	}
+		
+		
+		processing.fill(0, 100, 120);
+		processing.ellipse(nX, nY, radius, radius);
+		
     }
 
 
     processing.mouseMoved = function() {
-	nX = processing.mouseX;
-	nY = processing.mouseY;
+		
     }
+
+	processing.mouseDragged = function() {
+		
+		nX = processing.mouseX;
+		nY = processing.mouseY;
+		
+	}
+	
+	processing.mousePressed = function() {
+		
+	
+	}
+	processing.mouseReleased = function() {
+		
+	}
 
 }
 
