@@ -57,3 +57,10 @@ body {
 	border-bottom: 5px dotted #fff;
 	margin-bottom: 20px;
 }
+
+#canvas1 {
+
+}
+
+#canvas1.dragging {
+}
