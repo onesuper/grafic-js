@@ -1,0 +1,62 @@
+<html>
+  <head>
+	<title>Grafic</title>
+	<script type="text/javascript" src="jquery.js"></script>
+	<script type="text/javascript" src="processing.js"></script>
+	<script type="text/javascript" src="farbtastic.js"></script>
+	<script type="text/javascript" src="setAttributes.js"></script>
+	<link rel="stylesheet" href="farbtastic.css" type="text/css" />
+	<link rel="stylesheet" href="grafic.css" type="text/css" />
+	<script type="text/javascript">
+$(document).ready(function() {
+	$('#colorpicker').farbtastic(setStrokeColor);
+});
+	</script>
+  </head>
+
+
+  <body>
+	<img id="loadingpad" src="loading.gif" alt="loading..." />
+	<div id="sketchboard">
+	  <div id="sidebar">
+		<h2>Color</h2>
+		<div id="colorpicker"></div>
+		<form id="colorbar" onkeypress="if(event.keyCode==13) {return false;}">
+		  <input type="text" class="input" name="color" value="#000000"
+				 size="10" onkeydown="if(event.keyCode==13){setStrokeColor(this.value);return false;}" />
+		  <div class="show"></div>
+		</form>
+		
+		
+		<div class="separator"></div>
+	  </div>
+	  
+	  <div id="mainboard">
+		<p><canvas id="canvas1"></canvas></p>
+	  </div>
+	  
+
+	</div>
+
+	<script type="text/javascript">
+function addEventSimple(obj, evt, fn){
+	if (obj.addEventListener) {
+		obj.addEventListener(evt, fn, false);
+	} else if(obj.attachEvent) {
+		obj.attachEvent('on'+evt, fn);
+	}
+}
+//after loading, recover
+addEventSimple(window,'load',recoverFromLoading);
+function recoverFromLoading(){
+	$('#sketchboard').css({'visibility' : 'visible'});
+    document.body.style.background = '#333333';
+    $('#loadingpad').css({'visibility' : 'hidden'});
+}
+//hide sketchboard first
+$('#sketchboard').css({'visibility' : 'hidden'});
+document.body.style.background = '#FFFFFF';
+	</script>
+	<script type="text/javascript" src="grafic.js"></script>
+  </body>
+</html>

@@ -6,6 +6,14 @@ body {
 }
 
 
+#loadingpad {
+	margin: 0px 0px 0px 0px;
+	position: absolute;
+}
+
+#sketchboard {
+	
+}
 
 #sidebar {
 	margin: 0px 0px 0px 0px;
