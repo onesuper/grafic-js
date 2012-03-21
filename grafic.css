@@ -1,24 +1,27 @@
 body {
 	color: #eee;
-	font: 15px;
+	font-size: 18px;
 	background: #333;
+	font-family: Tahoma, Helvetica, Verdana;
+}
 
+a {
+	color: #b7bd56;
 }
 
 
 #loadingpad {
-	margin: 0px 0px 0px 0px;
+	margin: 240px 0px 0px 400px;
 	position: absolute;
 }
 
-#sketchboard {
-	
+#sketchboard {	
 }
 
 #sidebar {
-	margin: 0px 0px 0px 0px;
-	padding: 0px 10px 0px 10px;
-	width: 250px;
+	margin: 20px 0px 0px 20px;
+	padding: 0px 0px 0px 0px;
+	width: 230px;
 	float:left;
 	//border: 10px solid #eee;
 }
@@ -37,7 +40,7 @@ body {
 	height: 25px;
 	width: 25px;
 	background: #000;
-	margin: 0px 0px 0px 8px;
+	margin: 0px 10px 0px 8px;
 }
 
 #mainboard {
@@ -58,9 +61,9 @@ body {
 	margin-bottom: 20px;
 }
 
-#canvas1 {
-
-}
-
-#canvas1.dragging {
+#clear {
+	margin: 0px 0px 0xp 0px;
+	padding: 0px 0px 0px 0px;
+	height: 25px;
+	width: 70px;
 }

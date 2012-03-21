@@ -15,14 +15,13 @@ function sketchProc(p) {
 	var nowX, nowY;
 	var lastX, lastY;
 	var pathQueue = new Queue();
-	var inStroke = false;
+
     
 	// default attributes 
 	p.strokeSize = 1.0;
 	p.strokeColor = p.color(0);	
 	p.strokeOpacity = 255;
-	
-	
+	p.strokeTail = 50;
 
     p.setup = function() {
 		p.size(800, 600);
@@ -32,48 +31,48 @@ function sketchProc(p) {
 		nowY = 0;
 		lastX = 0;
 		lastY = 0;
-		
     }
 
     p.draw = function() {
-
-		if(inStroke) {
-			p.strokeWeight(p.strokeSize);
-			p.stroke(p.strokeColor);
-			p.smooth();
-			p.line(p.pmouseX, p.pmouseY, p.mouseX, p.mouseY);
-
-			if (pathQueue.getLength() <= 100) {
-				pathQueue.enqueue(new Array(p.mouseX, p.mouseY));
-			}
-
-			
-			while (pathQueue.getLength() >= 50) {
-				var aPoint = pathQueue.dequeue();
-				p.strokeWeight(1.0);
-				p.stroke(p.strokeColor);
-				p.line(aPoint[0], aPoint[1], p.mouseX, p.mouseY);
-			}
-
-
-		}	
     }
 
 
 
 	p.mouseDragged = function() {
-		inStroke = true;
+		p.strokeWeight(p.strokeSize);
+		p.stroke(p.strokeColor);
+		p.smooth();
+		p.line(p.pmouseX, p.pmouseY, p.mouseX, p.mouseY);
+
+		if (pathQueue.getLength() <= 100) {
+			pathQueue.enqueue(new Array(p.mouseX, p.mouseY));
+		}
+
+		
+		while (pathQueue.getLength() >= p.StrokeTail) {
+			var aPoint = pathQueue.dequeue();
+			p.strokeWeight(1.0);
+			p.stroke(p.strokeColor);
+			p.line(aPoint[0], aPoint[1], p.mouseX, p.mouseY);
+		}
 
 	}
 	
 
 
 	p.mouseReleased = function() {
-		inStroke = false;
+		pathQueue = new Queue();
 	}
 
 }
 
-var canvas = document.getElementById("canvas1");
+//initalize the canvas
+//var canvas = document.getElementById("canvas1");
+//var processing = new Processing(canvas, sketchProc);
+clearAll()
 
-var p = new Processing(canvas, sketchProc);
+function clearAll() {
+	var canvas = document.getElementById("canvas1");
+	var p = new Processing(canvas, sketchProc);
+	p.strokeColor = p.color(0);
+}

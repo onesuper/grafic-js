@@ -20,7 +20,6 @@ $(document).ready(function() {
 	<img id="loadingpad" src="loading.gif" alt="loading..." />
 	<div id="sketchboard">
 	  <div id="sidebar">
-		<h2>Color</h2>
 		<div id="colorpicker"></div>
 		<form id="colorbar" onkeypress="if(event.keyCode==13) {return false;}">
 		  <input type="text" class="input" name="color" value="#000000"
@@ -28,12 +27,12 @@ $(document).ready(function() {
 		  <div class="show"></div>
 		</form>
 		
-		
-		<div class="separator"></div>
+		<button id="clear" type="button" onclick="clearAll()">Clear All</button>
 	  </div>
 	  
 	  <div id="mainboard">
 		<p><canvas id="canvas1"></canvas></p>
+		<p>A sketchpad created by onesuper using <a href="http://processingjs.org/">processing.js</a></p>
 	  </div>
 	  
 
@@ -47,6 +46,7 @@ function addEventSimple(obj, evt, fn){
 		obj.attachEvent('on'+evt, fn);
 	}
 }
+
 //after loading, recover
 addEventSimple(window,'load',recoverFromLoading);
 function recoverFromLoading(){
@@ -54,6 +54,7 @@ function recoverFromLoading(){
     document.body.style.background = '#333333';
     $('#loadingpad').css({'visibility' : 'hidden'});
 }
+
 //hide sketchboard first
 $('#sketchboard').css({'visibility' : 'hidden'});
 document.body.style.background = '#FFFFFF';

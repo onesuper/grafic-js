@@ -19,8 +19,15 @@ function setStrokeColor(color)
 }
 
 
-function setStrokeSize()
+function setStrokeSize(size)
 {
 	var p = Processing.getInstanceById("canvas1");
-	p.strokeSize = 20.0;
+	p.strokeSize = size;
 }
+
+function setStrokeTail(size)
+{
+	var p = Processing.getInstanceById("canvas1");
+	p.strokeTail = size;
+}
+
