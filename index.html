@@ -8,6 +8,13 @@
 	<script type="text/javascript" src="queue.js"></script>
 	<link rel="stylesheet" href="farbtastic.css" type="text/css" />
 	<link rel="stylesheet" href="grafic.css" type="text/css" />
+
+    <link rel="stylesheet" type="text/css" href="slider/dhtmlxslider.css">
+    <script src="slider/dhtmlxcommon.js"></script>
+    <script src="slider/dhtmlxslider.js"></script>
+	<script>window.dhx_globalImgPath="slider/imgs/";</script>    
+
+
 	<script type="text/javascript">
 $(document).ready(function() {
 	$('#colorpicker').farbtastic(setStrokeColor);
@@ -27,9 +34,15 @@ $(document).ready(function() {
 		  <div class="show"></div>
 		</form>
 		
-		<button id="clear" type="button" onclick="clearAll()">Clear All</button>
+		<button id="clear" type="button" onclick="clearAll()">Clear
+		All</button>
+
+		<div class="separator"></div>
+
+		Size:  <div id="slider1"></div> 
+		Tail:  <div id="slider2"></div>
 	  </div>
-	  
+
 	  <div id="mainboard">
 		<p><canvas id="canvas1"></canvas></p>
 		<p>A sketchpad created by onesuper using <a href="http://processingjs.org/">processing.js</a></p>
@@ -51,13 +64,25 @@ function addEventSimple(obj, evt, fn){
 addEventSimple(window,'load',recoverFromLoading);
 function recoverFromLoading(){
 	$('#sketchboard').css({'visibility' : 'visible'});
-    document.body.style.background = '#333333';
+    document.body.style.background = '#3a3a3a';
     $('#loadingpad').css({'visibility' : 'hidden'});
 }
 
 //hide sketchboard first
 $('#sketchboard').css({'visibility' : 'hidden'});
-document.body.style.background = '#FFFFFF';
+document.body.style.background = '#3a3a3a';
+
+var sld1 = new dhtmlxSlider("slider1", {
+size:200, skin:"zipper", step:1, min:1, max: 10, value:1
+});
+sld1.init();
+
+
+var sld2 = new dhtmlxSlider("slider2", {
+size:200, skin:"zipper", step:1, min:1, max: 100, value:50
+});
+sld2.init();
+
 	</script>
 	<script type="text/javascript" src="grafic.js"></script>
   </body>

@@ -1,7 +1,7 @@
 body {
 	color: #eee;
 	font-size: 18px;
-	background: #333;
+	background: #fff;
 	font-family: Tahoma, Helvetica, Verdana;
 }
 
@@ -58,7 +58,7 @@ a {
 	clear: both;
 	height: 5px;
 	border-bottom: 5px dotted #fff;
-	margin-bottom: 20px;
+	margin: 20px 0px 20px 0px;
 }
 
 #clear {

@@ -49,7 +49,7 @@ function sketchProc(p) {
 		}
 
 		
-		while (pathQueue.getLength() >= p.StrokeTail) {
+		while (pathQueue.getLength() >= p.strokeTail) {
 			var aPoint = pathQueue.dequeue();
 			p.strokeWeight(1.0);
 			p.stroke(p.strokeColor);
@@ -58,7 +58,10 @@ function sketchProc(p) {
 
 	}
 	
-
+	p.mousePressed = function() {
+		setStrokeSize(sld1.value);
+		setStrokeTail(sld2.value);
+	}
 
 	p.mouseReleased = function() {
 		pathQueue = new Queue();
@@ -67,12 +70,13 @@ function sketchProc(p) {
 }
 
 //initalize the canvas
-//var canvas = document.getElementById("canvas1");
-//var processing = new Processing(canvas, sketchProc);
-clearAll()
+var canvas = document.getElementById("canvas1");
+var processing = new Processing(canvas, sketchProc);
+//clearAll()
 
 function clearAll() {
-	var canvas = document.getElementById("canvas1");
-	var p = new Processing(canvas, sketchProc);
-	p.strokeColor = p.color(0);
+	//var canvas = document.getElementById("canvas1");
+	//var p = new Processing(canvas, sketchProc);
+	//p.strokeColor = p.color(0);
+	processing.setup();
 }
