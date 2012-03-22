@@ -1,0 +1,69 @@
+body {
+	color: #eee;
+	font-size: 15px;
+	background: #fff;
+	font-family: Tahoma, Helvetica, Verdana;
+}
+
+a {
+	color: #b7bd56;
+}
+
+
+#loadingpad {
+	margin: 240px 0px 0px 400px;
+	position: absolute;
+}
+
+#sketchboard {	
+}
+
+#sidebar {
+	margin: 20px 0px 0px 20px;
+	padding: 0px 0px 0px 0px;
+	width: 230px;
+	float:left;
+	//border: 10px solid #eee;
+}
+
+#colorbar {
+	float:left;
+	margin: 0px 0px 0px 0px;
+}
+
+.input {
+	float: left;
+}
+
+.show {
+	float: left;
+	height: 25px;
+	width: 25px;
+	background: #000;
+	margin: 0px 10px 0px 8px;
+}
+
+#mainboard {
+	margin: 0px 0px 0px 30px;
+	float: left;
+}
+
+#colorpicker {
+	margin: 0px 10px 10px 0px;
+	float: left;
+	
+}
+
+.separator {
+	clear: both;
+	height: 5px;
+	border-bottom: 5px dotted #fff;
+	margin: 20px 0px 20px 0px;
+}
+
+#clear {
+	margin: 0px 0px 0xp 0px;
+	padding: 0px 0px 0px 0px;
+	height: 25px;
+	width: 70px;
+}
