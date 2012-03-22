@@ -1,10 +1,19 @@
-Grafic is sketchpad based on Processing.js (http://processingjs.org)
 
-Processing is a programming languange used to teach computer programming
-in a visual context, and to serve as the foundation for electronic
-sketchbooks. The project is started  in 2001 by Casey Reas and
-Benjamin Fry.
+== Grafic
+
+Grafic is sketchpad based on Processing.js(http://processingjs.org/)
+
+
+== Processing
+
+Processing(http://processing.org/) is a programming languange used to
+teach computer programming in a visual context, and to serve as the
+foundation for electronic sketchbooks. The project is started  in 2001
+by Casey Reas and Benjamin Fry.
 
 Processing.js is its implementation on web application which can help
 develop exhibit great visual effects(both 2D and 3D) in browser easily. 
 
+== Sketch Now!
+
+http://chengyichao.info/grafic/ 
