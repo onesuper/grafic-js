@@ -86,7 +86,7 @@ function calligraphProc(p) {
     }
 
     p.draw = function() {
-	
+		
 		for(var i=0; i<pathArray.length; i++) {
 			p.fill(p.strokeColor, opacity);
 			p.noStroke();
@@ -126,7 +126,7 @@ function calligraphProc(p) {
 
 	p.mouseReleased = function() {
 		pathArray = new Array();
-	
+		
 	}
 }
 
