@@ -27,7 +27,16 @@ $(document).ready(function() {
 	<img id="loadingpad" src="loading.gif" alt="loading..." />
 	<div id="sketchboard">
 	  <div id="sidebar">
+
+		<button id="sketchMode" type="button"
+		onclick="setSketchMode()">sketch</button>
+		<button id="calligraphMode" type="button"
+		onclick="setCalligraphMode()">calligraph</button>
+
+		<div class="separator"></div>
+
 		<div id="colorpicker"></div>
+
 		<form id="colorbar" onkeypress="if(event.keyCode==13) {return false;}">
 		  <input type="text" class="input" name="color" value="#000000"
 				 size="10" onkeydown="if(event.keyCode==13){setStrokeColor(this.value);return false;}" />
@@ -35,7 +44,7 @@ $(document).ready(function() {
 		</form>
 		
 		<button id="clear" type="button" onclick="clearAll()">Clear
-		All</button>
+		  All</button>
 
 		<div class="separator"></div>
 

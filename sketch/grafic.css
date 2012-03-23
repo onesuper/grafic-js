@@ -57,7 +57,7 @@ a {
 .separator {
 	clear: both;
 	height: 5px;
-	border-bottom: 5px dotted #fff;
+	//border-bottom: 5px dotted #fff;
 	margin: 20px 0px 20px 0px;
 }
 
