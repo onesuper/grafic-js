@@ -51,6 +51,9 @@ function changeMode(){
           <option>calligraph</option>
         </select>
 
+
+	
+
 		<div class="separator"></div>
 
 		<div id="colorpicker"></div>
@@ -61,18 +64,17 @@ function changeMode(){
 		  <div class="show"></div>
 		</form>
 		
-		<button id="clear" type="button" onclick="clearAll()">Clear
-		  All</button>
+
 
 		<div class="separator"></div>
         <div id="sketch-attr">
 		<b>pen size:</b>  <div id="slider1"></div> 
-		<b>sketch tail:</b>  <div id="slider2"></div>
+		<b>sketch length:</b>  <div id="slider2"></div>
         </div>
 	  </div>
 
 	  <div id="mainboard">
-        <h2>Use Your Illusion...</h2>
+        <h2>Use Your Illusion...    <a href="javascript:void(0)" onclick="clearAll()"></a></h2>
 		<p><canvas id="canvas1"></canvas></p>
 		<p>A sketchpad created by onesuper using <a href="http://processingjs.org/">Processing.js</a></p>
 	  </div>
@@ -93,13 +95,13 @@ function addEventSimple(obj, evt, fn){
 addEventSimple(window,'load',recoverFromLoading);
 function recoverFromLoading(){
 	$('#sketchboard').css({'visibility' : 'visible'});
-    document.body.style.background = '#3a3a3a';
+    document.body.style.background = '#333';
     $('#loadingpad').css({'visibility' : 'hidden'});
 }
 
 //hide sketchboard first
 $('#sketchboard').css({'visibility' : 'hidden'});
-document.body.style.background = '#3a3a3a';
+document.body.style.background = '#000';
 
 var sld1 = new dhtmlxSlider("slider1", {
 size:200, skin:"zipper", step:1, min:1, max: 10, value:1
