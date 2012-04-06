@@ -19,6 +19,24 @@
 $(document).ready(function() {
 	$('#colorpicker').farbtastic(setStrokeColor);
 });
+
+function changeMode(){
+  var objSel=document.getElementById("modeSelector");
+  var objTxt=objSel.options[objSel.options.selectedIndex].text;
+  switch(objTxt)
+  {
+  case 'sketch': 
+    setSketchMode();
+    break;
+  case 'calligraph': 
+    setCalligraphMode();
+    break;
+  default:
+  } 
+
+}
+
+
 	</script>
   </head>
 
@@ -27,11 +45,11 @@ $(document).ready(function() {
 	<img id="loadingpad" src="loading.gif" alt="loading..." />
 	<div id="sketchboard">
 	  <div id="sidebar">
-
-		<button id="sketchMode" type="button"
-		onclick="setSketchMode()">sketch</button>
-		<button id="calligraphMode" type="button"
-		onclick="setCalligraphMode()">calligraph</button>
+        <b>choose mode:</b>
+        <select id="modeSelector" onchange="changeMode();">
+          <option>sketch</option>
+          <option>calligraph</option>
+        </select>
 
 		<div class="separator"></div>
 
@@ -47,12 +65,14 @@ $(document).ready(function() {
 		  All</button>
 
 		<div class="separator"></div>
-
-		Size:  <div id="slider1"></div> 
-		Tail:  <div id="slider2"></div>
+        <div id="sketch-attr">
+		<b>pen size:</b>  <div id="slider1"></div> 
+		<b>sketch tail:</b>  <div id="slider2"></div>
+        </div>
 	  </div>
 
 	  <div id="mainboard">
+        <h2>Use Your Illusion...</h2>
 		<p><canvas id="canvas1"></canvas></p>
 		<p>A sketchpad created by onesuper using <a href="http://processingjs.org/">Processing.js</a></p>
 	  </div>

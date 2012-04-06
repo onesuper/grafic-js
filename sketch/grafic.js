@@ -140,6 +140,9 @@ function initSketchMode() {
 
 
 function setSketchMode() {
+    var attr = document.getElementById("sketch-attr");
+    attr.style.visibility = "visible";
+
 	var p = Processing.getInstanceById("canvas1");
 	p.exit();
 	var canvas = document.getElementById("canvas1");
@@ -147,6 +150,8 @@ function setSketchMode() {
 }
 
 function setCalligraphMode() {
+    var attr = document.getElementById("sketch-attr");
+    attr.style.visibility = "hidden";
 	var p = Processing.getInstanceById("canvas1");
 	p.exit();
 	var canvas = document.getElementById("canvas1");
