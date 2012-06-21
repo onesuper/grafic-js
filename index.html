@@ -1,0 +1,121 @@
+<html>
+  <head>
+	<title>Grafic</title>
+	<script type="text/javascript" src="third/jquery.js"></script>
+	<script type="text/javascript" src="third/processing.js"></script>
+	<script type="text/javascript" src="farbtastic/farbtastic.js"></script>
+	<script type="text/javascript" src="sketch/setAttributes.js"></script>
+	<script type="text/javascript" src="third/queue.js"></script>
+	<link rel="stylesheet" href="farbtastic/farbtastic.css" type="text/css" />
+	<link rel="stylesheet" href="sketch/grafic.css" type="text/css" />
+
+    <link rel="stylesheet" type="text/css" href="slider/dhtmlxslider.css">
+    <script src="slider/dhtmlxcommon.js"></script>
+    <script src="slider/dhtmlxslider.js"></script>
+	<script>window.dhx_globalImgPath="slider/imgs/";</script>    
+
+
+	<script type="text/javascript">
+$(document).ready(function() {
+	$('#colorpicker').farbtastic(setStrokeColor);
+});
+
+function changeMode(){
+  var objSel=document.getElementById("modeSelector");
+  var objTxt=objSel.options[objSel.options.selectedIndex].text;
+  switch(objTxt)
+  {
+  case 'sketch': 
+    setSketchMode();
+    break;
+  case 'calligraph': 
+    setCalligraphMode();
+    break;
+  default:
+  } 
+
+}
+
+
+	</script>
+  </head>
+
+
+  <body>
+	<img id="loadingpad" src="loading.gif" alt="loading..." />
+	<div id="sketchboard">
+	  <div id="sidebar">
+        <b>choose mode:</b>
+        <select id="modeSelector" onchange="changeMode();">
+          <option>sketch</option>
+          <option>calligraph</option>
+        </select>
+
+
+	
+
+		<div class="separator"></div>
+
+		<div id="colorpicker"></div>
+
+		<form id="colorbar" onkeypress="if(event.keyCode==13) {return false;}">
+		  <input type="text" class="input" name="color" value="#000000"
+				 size="10" onkeydown="if(event.keyCode==13){setStrokeColor(this.value);return false;}" />
+		  <div class="show"></div>
+		</form>
+		
+
+
+		<div class="separator"></div>
+        <div id="sketch-attr">
+		<b>pen size:</b>  <div id="slider1"></div> 
+		<b>sketch length:</b>  <div id="slider2"></div>
+        </div>
+	  </div>
+
+	  <div id="mainboard">
+        <h2 style="float:left;">Use Your Illusion...  </h2>
+        <div style="float:right; font-size:20px; padding: 15px 10px 0px 0px;">  <a href="javascript:void(0)" onclick="clearAll()">Give Me Another Paper!</a></div>
+		<p><canvas id="canvas1"></canvas></p>
+		<p>A sketchpad created by onesuper using <a href="http://processingjs.org/">Processing.js</a></p>
+	  </div>
+	  
+
+	</div>
+
+	<script type="text/javascript">
+function addEventSimple(obj, evt, fn){
+	if (obj.addEventListener) {
+		obj.addEventListener(evt, fn, false);
+	} else if(obj.attachEvent) {
+		obj.attachEvent('on'+evt, fn);
+	}
+}
+
+//after loading, recover
+addEventSimple(window,'load',recoverFromLoading);
+function recoverFromLoading(){
+	$('#sketchboard').css({'visibility' : 'visible'});
+    document.body.style.background = '#333';
+    $('#loadingpad').css({'visibility' : 'hidden'});
+}
+
+//hide sketchboard first
+$('#sketchboard').css({'visibility' : 'hidden'});
+document.body.style.background = '#000';
+
+var sld1 = new dhtmlxSlider("slider1", {
+size:200, skin:"zipper", step:1, min:1, max: 10, value:1
+});
+sld1.init();
+
+
+var sld2 = new dhtmlxSlider("slider2", {
+size:200, skin:"zipper", step:1, min:1, max: 100, value:50
+});
+sld2.init();
+
+	</script>
+	<script type="text/javascript" src="sketch/grafic.js"></script>
+  </body>
+</html>
